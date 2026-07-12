@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from 'react'
-import { 
-  LayoutDashboard, 
-  Atom, 
-  Trophy, 
-  User, 
-  Award, 
-  Star, 
-  Flame, 
-  LogOut, 
-  Compass, 
-  Sparkles, 
+import {
+  LayoutDashboard,
+  Atom,
+  Trophy,
+  User,
+  Award,
+  Star,
+  Flame,
+  LogOut,
+  Compass,
+  Sparkles,
   MessageSquare,
   Send,
   ArrowLeft,
@@ -28,7 +28,7 @@ import AuthPage from './AuthPage'
 // ─────────────────────────────────────────────────────────────────────────────
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost:8000'
-  : 'https://backend-new-3m56.onrender.com'
+  : 'https://backend-new-n9mt.onrender.com'
 
 function App() {
   // ─── Auth State ──────────────────────────────────────────────────────────
@@ -635,15 +635,14 @@ function App() {
                 <button
                   key={i}
                   id={`math-option-${i}`}
-                  className={`option-btn ${
-                    mathAnswered
-                      ? opt === mathQuestions[mathIndex].answer
-                        ? 'correct-answer'
-                        : mathAnswered === 'wrong' && opt !== mathQuestions[mathIndex].answer
-                          ? 'wrong-answer'
-                          : ''
-                      : ''
-                  }`}
+                  className={`option-btn ${mathAnswered
+                    ? opt === mathQuestions[mathIndex].answer
+                      ? 'correct-answer'
+                      : mathAnswered === 'wrong' && opt !== mathQuestions[mathIndex].answer
+                        ? 'wrong-answer'
+                        : ''
+                    : ''
+                    }`}
                   onClick={() => handleMathAnswer(opt)}
                   disabled={!!mathAnswered}
                 >
